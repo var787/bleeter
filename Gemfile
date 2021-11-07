@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
+# require 'em/pure_ruby'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -56,7 +57,9 @@ group :development do
   #Provides a better error page for Rails and other Rack apps
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   #Guard is a command line tool to easily handle events on file system modifications.
-  gem 'guard', '~> 2.18'
+  gem 'guard', '~> 2.18', require: false
+  # gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3', require: false
 end
 
 group :test do
