@@ -1,0 +1,2 @@
+class Bleet < ApplicationRecord
+end

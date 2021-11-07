@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bleets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bleet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bleets.each do |bleet| %>
+      <tr>
+        <td><%= bleet.bleet %></td>
+        <td><%= link_to 'Show', bleet %></td>
+        <td><%= link_to 'Edit', edit_bleet_path(bleet) %></td>
+        <td><%= link_to 'Destroy', bleet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bleet', new_bleet_path %>
