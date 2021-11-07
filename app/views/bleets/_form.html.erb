@@ -1,22 +1,8 @@
-<%= form_with(model: bleet) do |form| %>
-  <% if bleet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bleet.errors.count, "error") %> prohibited this bleet from being saved:</h2>
-
-      <ul>
-        <% bleet.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :bleet %>
-    <%= form.text_area :bleet %>
+<%= simple_form_for(@bleet) do |f| %>
+  <%= f.error_notification %>
+  <div class="control">
+    <%= f.input :bleet, label: "Bleet Away", input_html: { class: "textarea"}, wrapper: false, 
+    label_html: {class: "label"}, placeholder: "Compose a new bleet" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.button :submit, class: "button is-info"  %>
 <% end %>

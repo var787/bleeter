@@ -4,6 +4,7 @@ class BleetsController < ApplicationController
   # GET /bleets or /bleets.json
   def index
     @bleets = Bleet.all.order("created_at DESC")
+    @bleet = Bleet.new
   end
 
   # GET /bleets/1 or /bleets/1.json
