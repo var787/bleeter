@@ -1,5 +1,6 @@
 class BleetsController < ApplicationController
   before_action :set_bleet, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /bleets or /bleets.json
   def index
