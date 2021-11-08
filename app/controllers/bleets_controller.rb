@@ -26,7 +26,7 @@ class BleetsController < ApplicationController
 
     respond_to do |format|
       if @bleet.save
-        format.html { redirect_to @bleet, notice: "Bleet was successfully created." }
+        format.html { redirect_to root_path, notice: "Bleet was successfully created." }
         format.json { render :show, status: :created, location: @bleet }
       else
         format.html { render :new, status: :unprocessable_entity }
