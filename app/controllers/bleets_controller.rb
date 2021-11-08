@@ -14,7 +14,7 @@ class BleetsController < ApplicationController
 
   # GET /bleets/new
   def new
-    @bleet = Bleet.new
+    @bleet = current_user.bleets.build
   end
 
   # GET /bleets/1/edit
@@ -23,7 +23,7 @@ class BleetsController < ApplicationController
 
   # POST /bleets or /bleets.json
   def create
-    @bleet = Bleet.new(bleet_params)
+    @bleet = current_user.bleets.build(bleet_params)
 
     respond_to do |format|
       if @bleet.save
